@@ -16,6 +16,8 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 
+import Search from './components/Search'
+
 const PrivateRoute = ({ component: Component, ...rest}) => {
   let token = localStorage.getItem("jwtToken")
   console.log("====> Hitting a PRIVATE ROUTE")
@@ -71,6 +73,7 @@ function App() {
       <div className="container mt-5"> 
         <Switch>
           <Route path='/signup' component={Signup}/> 
+          <Route path='/search' component={Search}/>
           <Route 
             path="/login"
             render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}

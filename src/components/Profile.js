@@ -7,11 +7,13 @@ const Profile = (props) => {
     const { id, name, email, exp } = user
     const expirationTime = Date.now()
 
+    console.log(exp);
+
     //make a condition that compares exp and current time
-    if (currentTime >= expirationTime) { 
+    /**if (currentTime >= expirationTime) { 
         handleLogout()
         alert("Session has ended. Please login to continue")
-    }
+    }**/
 
     //if data is available, display whats in the div tag 
     //else show "loading..."
