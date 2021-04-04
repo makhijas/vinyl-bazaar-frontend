@@ -40,10 +40,10 @@ const Login = (props) => {
         }) 
     }
 
-    props.user ? <Redirect to="/profile" /> : <Redirect to="/login" />
 
     return (
         <div className="row mt-4">
+            { props.user ? <Redirect to="/profile" /> : <Redirect to="/login" /> }
             <h2>Login</h2>
             <form onSubmit = {handleSubmit}>
                 <div className="form-group">

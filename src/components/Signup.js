@@ -33,7 +33,7 @@ const Signup = () => {
         //password length >= 8 characters
         if (password === confirmPassword && password.length >= 8) {
             const newUser = { name, email, password };
-            axios.post(`${REACT_APP_SERVER_URL}/user/register`, newUser)
+            axios.post(`${REACT_APP_SERVER_URL}/users/register`, newUser)
             .then(response => {
                 console.log("====> YAY NEW USER!")
                 console.log(response)
@@ -54,7 +54,7 @@ const Signup = () => {
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Signup</h2>
-                    <form onSubit = {handleSubmit}>
+                    <form onSubmit = {handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input type="text" name="name" value={name} onChange={handleName} className="form-control"/>

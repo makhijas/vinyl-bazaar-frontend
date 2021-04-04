@@ -17,6 +17,9 @@ import Profile from './components/Profile'
 import Welcome from './components/Welcome'
 
 import Search from './components/Search'
+import VinylResults from './components/VinylResults'
+import VinylDetail from './components/VinylDetail'
+
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
   let token = localStorage.getItem("jwtToken")
@@ -61,14 +64,31 @@ function App() {
       setCurrentUser(null)
       setIsAuthenticated(false)
     }
-
-
   }
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+      const getData = async() => {
+          let searchTerm = "Tana Talk"
+          // can also use axios.get instead of fetch
+          let response = await fetch("https://api.discogs.com/database/search?release_title=" + searchTerm + "&key=tyUsvIrblYOpTSJKlFiz&secret=dvbIgifMTdHKdtQFwLIYdHZltjfQvyCw")
+          response = await response.json()
+          console.log(response)
+          // if using axios, the following would be response.data
+          response = response.results
+          console.log("****** API DATA ******")
+          console.log(response)
+          // setting the array with response from api
+          setData(response)
+      }
+      getData()
+  }, [])
 
 
   return (
     <div className="App">
-      <h1>MERN Authentication</h1>
+      <h1>Vinyl Bazaar</h1>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} /> 
       <div className="container mt-5"> 
         <Switch>
@@ -79,8 +99,13 @@ function App() {
             render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
           />
           <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
-          <Route exact path="/" componen={Welcome} />
+          <Route exact path="/" component={Welcome} />
         </Switch>
+
+        <>
+        <Route exact path="/search/albums" render={(props)=> <VinylResults {...props} data={data} />} />
+        <Route exact path="/vinylDetail" render={(props)=> <VinylDetail {...props} />} />
+        </>
       </div>
       <Footer />
     </div>
