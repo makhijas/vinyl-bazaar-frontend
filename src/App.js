@@ -89,7 +89,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Vinyl Bazaar</h1>
+      {/* <h1 class="header">Vinyl Bazaar</h1> */}
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} /> 
       <div className="container mt-5"> 
         <Switch>
