@@ -25,7 +25,6 @@ const Navbar = (props) => {
                         </li>
                         <li className="nav-item">
                             <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>
-                            <NavLink className="nav-link" to="/Logout">Logout</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/search">Search</NavLink>
