@@ -33,6 +33,9 @@ export default function VinylDetail(props) {
         <div>
             <form onSubmit={saveAlbum}>
                 <p>Album: {props.location.state.album.title} </p>
+                <p>Year: {props.location.state.album.year} </p>
+                <img src={props.location.state.album.thumb}></img>
+                <p>Format: {props.location.state.album.format[0]} </p>
                 <label for="bounty">Enter a bounty in USD</label>
                 <input type="number" name="bounty" onChange={e => {
                 setUserInput(e.target.value)

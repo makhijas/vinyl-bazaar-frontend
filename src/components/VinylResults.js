@@ -45,6 +45,7 @@ function VinylResults(props) {
                         <p>Album: {album.title}</p>
                         <p>Year: {album.year}</p>
                         <img src={album.thumb}></img>
+                        <p>Format: {album.format[0]}</p>
                         <button><Link to={{
                             pathname: "/vinylDetail",
                             state: { album: album }

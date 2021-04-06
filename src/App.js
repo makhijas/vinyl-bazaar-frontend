@@ -96,6 +96,7 @@ function App() {
           <Route path='/signup' component={Signup}/> 
           <Route path='/search' component={Search}/>
           <Route path='/bounties' component={Bounties}/>
+          <Route path='/about' component={About}/>
           <Route 
             path="/login"
             render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}

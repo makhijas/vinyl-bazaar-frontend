@@ -6,6 +6,8 @@ html {
 }
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
+  background-color: black;
+  color: lightgray;
 }
 .footer {
   position: absolute;

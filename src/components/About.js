@@ -4,12 +4,7 @@ const About = () => {
     return (
         <div>
             <h1>About</h1>
-            <p>This is about us...</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Tempore dolorum excepturi, pariatur dolore fuga perferendis 
-                mollitia deserunt a voluptas assumenda! Consequatur beatae qui 
-                dolorem tempora possimus accusantium, fugit eius quidem?
-            </p>
+            <p>Putting the power of the market back into the buyer's hands. Here's a place where you can set a bounty for a vinyl record you've had your eye on and just can't find one that's reasonably priced </p>
         </div>
     )
 }
