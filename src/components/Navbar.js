@@ -30,6 +30,9 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/search">Search</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/bounties">Bounties</NavLink>
+                        </li>
                     </ul> : 
                     <ul>
                     <li className="nav-item">

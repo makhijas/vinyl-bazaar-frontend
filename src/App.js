@@ -19,6 +19,7 @@ import Welcome from './components/Welcome'
 import Search from './components/Search'
 import VinylResults from './components/VinylResults'
 import VinylDetail from './components/VinylDetail'
+import Bounties from './components/Bounties'
 
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
@@ -94,6 +95,7 @@ function App() {
         <Switch>
           <Route path='/signup' component={Signup}/> 
           <Route path='/search' component={Search}/>
+          <Route path='/bounties' component={Bounties}/>
           <Route 
             path="/login"
             render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
@@ -106,6 +108,7 @@ function App() {
         <Route exact path="/search/albums" render={(props)=> <VinylResults {...props} data={data} />} />
         <Route exact path="/vinylDetail" render={(props)=> <VinylDetail {...props} />} />
         </>
+
       </div>
       <Footer />
     </div>
